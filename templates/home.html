@@ -9,5 +9,17 @@
 </head>
 <body>
     <h1>Hello</h1>
+
+    <form action="/add" method="post">
+        <input type="text" name="title">
+        <button type="submit">Add</button>
+    </form>
+
+    {% for todo in todos %}
+        <p>{{ todo.title }}</p>
+        <p>{{ todo.complete }}</p>
+        <p><a href="/update/{{ todo.id }}/">Update</a></p>
+        <p><a href="/delete/{{ todo.id }}/">Delete</a></p>
+    {% endfor %}
 </body>
 </html>
